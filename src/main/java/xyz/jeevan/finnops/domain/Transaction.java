@@ -13,11 +13,10 @@ public class Transaction {
   private Double amount;
 
   @NotNull
-  private Long time;
+  private Long timestamp;
 
   public Transaction() {
     this.id = UUID.randomUUID().toString();
-    this.time = System.currentTimeMillis();
   }
 
   public String getId() {
@@ -36,12 +35,12 @@ public class Transaction {
     this.amount = amount;
   }
 
-  public Long getTime() {
-    return time;
+  public Long getTimestamp() {
+    return timestamp;
   }
 
-  public void setTime(Long time) {
-    this.time = time;
+  public void setTimestamp(Long timestamp) {
+    this.timestamp = timestamp;
   }
 
   /**
@@ -51,7 +50,7 @@ public class Transaction {
    * @return true if old, false otherwise.
    */
   public boolean isOlderThan(long timeToCompareWith) {
-    return (this.time < timeToCompareWith);
+    return (this.timestamp < timeToCompareWith);
   }
 
 }

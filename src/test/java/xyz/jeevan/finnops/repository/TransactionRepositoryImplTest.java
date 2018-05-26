@@ -24,7 +24,7 @@ public class TransactionRepositoryImplTest {
   private Transaction dummyTransaction(double amount) {
     Transaction transaction = new Transaction();
     transaction.setAmount(amount);
-    transaction.setTime(System.currentTimeMillis());
+    transaction.setTimestamp(System.currentTimeMillis());
     return transaction;
   }
 

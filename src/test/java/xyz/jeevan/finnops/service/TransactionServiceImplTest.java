@@ -75,7 +75,7 @@ public class TransactionServiceImplTest {
   private Transaction dummyTransaction(double amount) {
     Transaction transaction = new Transaction();
     transaction.setAmount(amount);
-    transaction.setTime(1527344354287l);
+    transaction.setTimestamp(1527344354287l);
     return transaction;
   }
 }

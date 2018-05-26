@@ -18,7 +18,7 @@ public class TransactionTest {
   @Test
   public void isOlderThan_success() {
     Transaction transaction = new Transaction();
-    transaction.setTime(System.currentTimeMillis());
+    transaction.setTimestamp(System.currentTimeMillis());
     long sixtySecondsAgo = System.currentTimeMillis() - 60 * 1000;
     assertFalse(transaction.isOlderThan(sixtySecondsAgo));
   }
@@ -30,7 +30,7 @@ public class TransactionTest {
     calendar.add(Calendar.MINUTE, -2);
     long twoMinutesAgo = calendar.getTimeInMillis();
 
-    transaction.setTime(twoMinutesAgo);
+    transaction.setTimestamp(twoMinutesAgo);
     long sixtySecondsAgo = System.currentTimeMillis() - 60 * 1000;
     assertTrue(transaction.isOlderThan(sixtySecondsAgo));
   }
