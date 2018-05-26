@@ -31,7 +31,7 @@ public class TransactionServiceImpl implements TransactionService {
     transactionRepo.create(transaction);
   }
 
-  private void validateTransaction(final Transaction transaction) {
+  void validateTransaction(final Transaction transaction) {
     long sixtySecondsAgo = System.currentTimeMillis() - 60 * 1000;
     if (transaction.isOlderThan(sixtySecondsAgo)) {
       log.error("Transaction was older than 60 seconds. Could not process.");
